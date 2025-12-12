@@ -25,6 +25,7 @@ public class LoginPageTest extends TestBase{
 	
 	@Test(priority=1)
 	public void loginPageTitleTest(){
+		System.out.println("feature/cart-test...");
 		String title = loginPage.validateLoginPageTitle();
 		System.out.println("git commit changes....");
 		Assert.assertEquals(title, "#1 Free CRM for Any Business: Online Customer Relationship Software");
