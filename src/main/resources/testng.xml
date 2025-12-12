@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="FREE CRM Application Test Automation Test Suite">
+<suite name="FREE CRM Application Test Automation Test Suite" Parallel="classes" thread-count="5">
 
 	<listeners>
 		<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
