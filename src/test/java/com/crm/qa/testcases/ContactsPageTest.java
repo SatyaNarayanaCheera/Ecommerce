@@ -5,9 +5,11 @@
 
 package com.crm.qa.testcases;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
@@ -68,7 +70,7 @@ public class ContactsPageTest extends TestBase{
 	public void selectMultipleContactsTest(){
 		contactsPage.selectContactsByName("test2 test2");
 		contactsPage.selectContactsByName("ui uiii");
-
+	
 	}
 	
 	@DataProvider

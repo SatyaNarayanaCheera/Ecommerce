@@ -40,11 +40,11 @@ public class TestUtil extends TestBase {
 		}
 		try {
 			book = WorkbookFactory.create(file);
-		} catch (InvalidFormatException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} /*
+			 * catch (IOException e) { e.printStackTrace(); }
+			 */
 		sheet = book.getSheet(sheetName);
 		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
 		// System.out.println(sheet.getLastRowNum() + "--------" +
@@ -52,6 +52,7 @@ public class TestUtil extends TestBase {
 		for (int i = 0; i < sheet.getLastRowNum(); i++) {
 			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
 				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
+				
 				// System.out.println(data[i][k]);
 			}
 		}
