@@ -1,9 +1,15 @@
 package com.crm.qa.pages;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.base.TestBase;
 
@@ -36,7 +42,7 @@ public class LoginPage extends TestBase{
 	}
 	
 	public boolean validateCRMImage(){
-		return crmLogo.isDisplayed();
+	return crmLogo.isDisplayed();
 	}
 	
 	public HomePage login(String un, String pwd){
