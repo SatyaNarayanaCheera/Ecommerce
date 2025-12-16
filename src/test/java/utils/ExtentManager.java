@@ -14,6 +14,7 @@ public class ExtentManager {
                 new ExtentSparkReporter("test-output/ExtentReport.html");
 
             spark.config().setReportName("Automation Test Report");
+       
             spark.config().setDocumentTitle("Selenium Test Results");
 
             extent = new ExtentReports();

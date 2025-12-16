@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="FREE CRM Application Test Automation Test Suite">
+<suite name="FREE CRM Application Test Automation Test Suite" parallel="none" thread-count="5" >
 
 <!-- 	<listeners>
 		<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
 	</listeners> -->
 <listeners>
-    <listener class-name="listeners.ExtentTestListener"/>
+	<listener class-name="listeners.ExtentTestListener" />
 </listeners>
 
+<!-- Parameter at the suite level (applies to all tests) -->
+  <parameter name="browser" value="chrome" />
+  
 	<test name="Free CRM App Test Cases">
-		<classes>
-			<class name="com.crm.qa.testcases.LoginPageTest"></class>
-			<!-- <class name="com.crm.qa.testcases.HomePageTest"></class>
-			<class name="com.crm.qa.testcases.ContactsPageTest"></class> -->
+	<classes>
+	<class name="com.crm.qa.testcases.LoginPageTest"></class>
+	<!-- <class name="com.crm.qa.testcases.HomePageTest"></class>
+	<class name="com.crm.qa.testcases.ContactsPageTest"></class> -->
 
-		</classes>
+</classes>
 	</test>
 </suite>

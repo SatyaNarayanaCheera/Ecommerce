@@ -40,20 +40,22 @@ public class TestBase {
 	}
 	
 	
-	public static void initialization(){
+	public void initialization(){
 		String browserName = prop.getProperty("browser");
 		
 		if(browserName.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");	
 			driver = new ChromeDriver(); 
+			//driver=WebDriverManager.getinstance(browserName).getDriver();
 		}
 		else if(browserName.equals("FF")){
 			System.setProperty("webdriver.gecko.driver", "/Users/naveenkhunteta/Documents/SeleniumServer/geckodriver");	
-			driver = new FirefoxDriver(); 
+			driver = new FirefoxDriver();
+			//driver=WebDriverManager.getinstance(browserName).getDriver();
 		}
 		
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
-	driver.manage().window().maximize();
+	   
+	    driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));

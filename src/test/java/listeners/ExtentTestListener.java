@@ -1,8 +1,5 @@
 package listeners;
 
-import java.io.File;
-
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -11,9 +8,13 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.crm.qa.base.TestBase;
+import com.crm.qa.base.WebDriverManager;
 
 import utils.ExtentManager;
 import utils.ScreenshotUtil;
+
+
+
 
 public class ExtentTestListener implements ITestListener {
 
@@ -29,9 +30,11 @@ public class ExtentTestListener implements ITestListener {
     public void onTestSuccess(ITestResult result) {
         test.get().pass("Test Passed");
     }
+    
 
     @Override
     public void onTestFailure(ITestResult result) {
+    	
     String path = ScreenshotUtil.captureScreenshot(TestBase.driver,result.getMethod().getMethodName());
     
         test.get().fail(result.getThrowable()).addScreenCaptureFromPath(path);

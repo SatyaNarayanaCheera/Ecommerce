@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.base.TestBase;
+import com.crm.qa.base.WebDriverManager;
 
 public class LoginPage extends TestBase{
 	
@@ -39,6 +40,7 @@ public class LoginPage extends TestBase{
 	//Actions:
 	public String validateLoginPageTitle(){
 		return driver.getTitle();
+		
 	}
 	
 	public boolean validateCRMImage(){
