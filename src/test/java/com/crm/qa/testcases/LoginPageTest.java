@@ -37,7 +37,9 @@ public class LoginPageTest extends TestBase{
 	//	loginPage.login(null, null)
 		String title = loginPage.validateLoginPageTitle();
 		Assert.assertTrue(false);
-		System.out.println("feature/cart-test... ----------> Login2....");
+		System.out.println("feature/cart-test...1..");
+		System.out.println("feature/cart-test...2..");
+		System.out.println("feature/cart-test...3..");
 	}
 	
 	/*
