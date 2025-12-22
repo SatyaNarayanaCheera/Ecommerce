@@ -27,7 +27,7 @@ public class LoginPageTest extends TestBase{
 	
 	@Test(priority=1)
 	public void loginPageTitleTest(){
-		System.out.println("feature/cart-test... ----------> Updated to cart1....");
+		System.out.println("feature/cart-test... ----------> Login1....");
 		String title = loginPage.validateLoginPageTitle();
 		System.out.println("git commit changes...." +title);
 		Assert.assertEquals(title, "#1 Free CRM Business Software - Free Forever");
@@ -37,6 +37,7 @@ public class LoginPageTest extends TestBase{
 	//	loginPage.login(null, null)
 		String title = loginPage.validateLoginPageTitle();
 		Assert.assertTrue(false);
+		System.out.println("feature/cart-test... ----------> Login2....");
 	}
 	
 	/*
