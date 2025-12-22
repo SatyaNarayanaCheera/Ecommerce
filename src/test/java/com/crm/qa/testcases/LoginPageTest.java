@@ -40,6 +40,8 @@ public class LoginPageTest extends TestBase{
 		System.out.println("feature/cart-test...1..");
 		System.out.println("feature/cart-test...2..");
 		System.out.println("feature/cart-test...3..");
+		System.out.println("feature/cart-test...4..");
+		System.out.println("feature/cart-test...5..");
 	}
 	
 	/*
