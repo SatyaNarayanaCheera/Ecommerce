@@ -29,11 +29,11 @@ public class HomePage extends TestBase {
 
 	// Initializing the Page Objects:
 	public HomePage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(TestBase.getdriver(), this);
 	}
 	
 	public String verifyHomePageTitle(){
-		return driver.getTitle();
+		return TestBase.getdriver().getTitle();
 	}
 	
 	
@@ -57,7 +57,7 @@ public class HomePage extends TestBase {
 	}
 	
 	public void clickOnNewContactLink(){
-		Actions action = new Actions(driver);
+		Actions action = new Actions(getdriver());
 		action.moveToElement(contactsLink).build().perform();
 	
 		newContactLink.click();

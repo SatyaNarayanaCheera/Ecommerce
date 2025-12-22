@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [FREE CRM Application Test Automation Test Suite]">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [FREE CRM Application Test Automation Test Suite]">
+  <parameter name="browser" value="chrome"/>
   <listeners>
-    <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
+    <listener class-name="listeners.ExtentTestListener"/>
   </listeners>
-  <test name="Free CRM App Test Cases(failed)">
+  <test thread-count="5" name="Free CRM App Test Cases(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.ContactsPageTest">
+      <class name="com.crm.qa.testcases.AmazonHomeTest">
         <methods>
+          <include name="Display"/>
           <include name="setUp"/>
-          <include name="selectMultipleContactsTest"/>
-          <include name="tearDown"/>
-          <include name="selectSingleContactsTest"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
+      </class> <!-- com.crm.qa.testcases.AmazonHomeTest -->
     </classes>
   </test> <!-- Free CRM App Test Cases(failed) -->
 </suite> <!-- Failed suite [FREE CRM Application Test Automation Test Suite] -->

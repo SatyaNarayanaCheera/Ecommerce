@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.base.TestBase;
-import com.crm.qa.base.WebDriverManager;
+
 
 public class LoginPage extends TestBase{
 	
@@ -34,12 +34,12 @@ public class LoginPage extends TestBase{
 	
 	//Initializing the Page Objects:
 	public LoginPage(){
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(TestBase.getdriver(), this);
 	}
 	
 	//Actions:
 	public String validateLoginPageTitle(){
-		return driver.getTitle();
+		return getdriver().getTitle();
 		
 	}
 	
@@ -51,7 +51,7 @@ public class LoginPage extends TestBase{
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		//loginBtn.click();
-		    	JavascriptExecutor js = (JavascriptExecutor)driver;
+		    	JavascriptExecutor js = (JavascriptExecutor)getdriver();
 		    	js.executeScript("arguments[0].click();", loginBtn);
 		    	
 		return new HomePage();

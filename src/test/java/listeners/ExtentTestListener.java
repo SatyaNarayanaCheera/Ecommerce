@@ -8,12 +8,9 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.crm.qa.base.TestBase;
-import com.crm.qa.base.WebDriverManager;
 
 import utils.ExtentManager;
 import utils.ScreenshotUtil;
-
-
 
 
 public class ExtentTestListener implements ITestListener {
@@ -23,7 +20,16 @@ public class ExtentTestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        test.set(extent.createTest(result.getMethod().getMethodName()));
+        
+        String testName = result.getMethod().getMethodName();
+
+        if (result.getMethod().getCurrentInvocationCount() > 0) {
+            testName += "_Retry_" +
+                result.getMethod().getCurrentInvocationCount();
+        }
+        
+        test.set(extent.createTest(testName));
+        
     }
 
     @Override
@@ -35,7 +41,7 @@ public class ExtentTestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
     	
-    String path = ScreenshotUtil.captureScreenshot(TestBase.driver,result.getMethod().getMethodName());
+    String path = ScreenshotUtil.captureScreenshot(TestBase.getdriver(),result.getMethod().getMethodName());
     
         test.get().fail(result.getThrowable()).addScreenCaptureFromPath(path);
   }

@@ -10,15 +10,17 @@ public class ExtentManager {
     public static ExtentReports getExtent() {
 
         if (extent == null) {
-            ExtentSparkReporter spark =
+        	
+         ExtentSparkReporter spark =
                 new ExtentSparkReporter("test-output/ExtentReport.html");
 
-            spark.config().setReportName("Automation Test Report");
+             spark.config().setReportName("Automation Test Report");
        
             spark.config().setDocumentTitle("Selenium Test Results");
-
+           
             extent = new ExtentReports();
             extent.attachReporter(spark);
+          
 
             extent.setSystemInfo("OS", System.getProperty("os.name"));
             extent.setSystemInfo("Browser", "Chrome");

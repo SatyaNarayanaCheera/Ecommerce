@@ -7,9 +7,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
-import com.crm.qa.base.WebDriverManager;
-import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+
 
 @Listeners(listeners.ExtentTestListener.class)
 public class LoginPageTest extends TestBase{
@@ -53,7 +52,7 @@ public class LoginPageTest extends TestBase{
 	
 	@AfterMethod
 	public void tearDown(){
-		WebDriverManager.quitbrowser();
+		getdriver().quit();
 	}
 	
 	
